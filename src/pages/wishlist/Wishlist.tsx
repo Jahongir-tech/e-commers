@@ -5,28 +5,28 @@ import EmptyWishlist from "./EmptyWishlist";
 import { useEffect } from "react";
 
 const Wishlist = () => {
-  const wishlist = useSelector((state: RootState) => state.wishlist.value);
+    const wishlist = useSelector((state: RootState) => state.wishlist.value);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-  const wishlistData = {
-    products: wishlist,
-    total: wishlist.length,
-    skip: 0,
-    limit: wishlist.length,
-  };
+    const wishlistData = {
+        products: wishlist,
+        total: wishlist.length,
+        skip: 0,
+        limit: wishlist.length,
+    };
 
-  return (
-    <>
-      {wishlist.length > 0 ? (
-        <Products data={wishlistData} title="Wishlist" />
-      ) : (
-        <EmptyWishlist />
-      )}
-    </>
-  );
+    return (
+        <>
+            {wishlist.length > 0 ? (
+                <Products data={wishlistData} title="Wishlist" />
+            ) : (
+                <EmptyWishlist />
+            )}
+        </>
+    );
 };
 
 export default Wishlist;

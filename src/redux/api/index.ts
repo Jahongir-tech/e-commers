@@ -1,7 +1,6 @@
 import { fetchBaseQuery, retry, createApi } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = async (args: any, api: any, extraOptions: any) => {
-  // const { dispatch } = api;
   const rawBaseQuery = fetchBaseQuery({
     baseUrl: import.meta.env.VITE_BASE_URL,
     prepareHeaders: (headers) => {
@@ -13,12 +12,6 @@ const baseQuery = async (args: any, api: any, extraOptions: any) => {
     },
   });
   const response = await rawBaseQuery(args, api, extraOptions);
-  // if (response.error) {
-  //   const { status } = response.error;
-  //   if (status === 401 || status === 403) {
-  //   //   dispatch(clearToken());
-  //   }
-  // }
   return response;
 };
 

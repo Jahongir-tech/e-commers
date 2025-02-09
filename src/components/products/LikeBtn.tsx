@@ -6,7 +6,7 @@ import { memo, useState } from "react";
 
 const Heart = ({ product }: { product: any }) => {
   const dispatch = useDispatch();
-  const wishlist = useSelector((state: RootState) => state.wishlist.value); // Massiv maydonini chaqirish
+  const wishlist = useSelector((state: RootState) => state.wishlist.value); 
 
   const initialState = {
     id: 0,
