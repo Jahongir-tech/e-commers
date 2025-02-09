@@ -12,90 +12,92 @@ import { SuspenseContainer } from "../config";
 import Detail from "../pages/detail/Detail";
 
 const Routers = () => {
-  return (
-    <>
-      {useRoutes([
-        {
-          path: "/",
-          element: <Layout />,
-          children: [
-            {
-              path: "/",
-              element: (
-                <SuspenseContainer>
-                  <Home />
-                </SuspenseContainer>
-              ),
-            },
-            {
-              path: "/contact",
-              element: (
-                <SuspenseContainer>
-                  <Contact />
-                </SuspenseContainer>
-              ),
-            },
-            {
-              path: "/about",
-              element: (
-                <SuspenseContainer>
-                  <About />
-                </SuspenseContainer>
-              ),
-            },
-            {
-              path: "/sign-up",
-              element: (
-                <SuspenseContainer>
-                  <SignUp />
-                </SuspenseContainer>
-              ),
-            },
-            {
-              path: "/sign-in",
-              element: (
-                <SuspenseContainer>
-                  <SignIn />
-                </SuspenseContainer>
-              ),
-            },
-            {
-              path: "/cart",
-              element: (
-                <SuspenseContainer>
-                  <Cart />
-                </SuspenseContainer>
-              ),
-            },
-            {
-              path: "/wishlist",
-              element: (
-                <SuspenseContainer>
-                  <Wishlist />
-                </SuspenseContainer>
-              ),
-            },
-            {
-              path: "/product/:id",
-              element: (
-                <SuspenseContainer>
-                  <Detail />
-                </SuspenseContainer>
-              ),
-            },
-          ],
-        },
-        {
-          path: "*",
-          element: (
-            <SuspenseContainer>
-              <NotFound />
-            </SuspenseContainer>
-          ),
-        },
-      ])}
-    </>
-  );
+    return (
+        <>
+            {useRoutes([
+                {
+                    path: "/",
+                    element: <Layout />,
+                    children: [
+                        {
+                            path: "/",
+                            element: (
+                                <SuspenseContainer>
+                                    <Home />
+                                </SuspenseContainer>
+                            ),
+                        },
+
+                        {
+                            path: "/sign-up",
+                            element: (
+                                <SuspenseContainer>
+                                    <SignUp />
+                                </SuspenseContainer>
+                            ),
+                        },
+                        {
+                            path: "/sign-in",
+                            element: (
+                                <SuspenseContainer>
+                                    <SignIn />
+                                </SuspenseContainer>
+                            ),
+                        },
+
+                        {
+                            path: "/wishlist",
+                            element: (
+                                <SuspenseContainer>
+                                    <Wishlist />
+                                </SuspenseContainer>
+                            ),
+                        },
+                        {
+                            path: "/product/:id",
+                            element: (
+                                <SuspenseContainer>
+                                    <Detail />
+                                </SuspenseContainer>
+                            ),
+                        },
+                    ],
+                },
+                {
+                    path: "*",
+                    element: (
+                        <SuspenseContainer>
+                            <NotFound />
+                        </SuspenseContainer>
+                    ),
+                },
+                {
+                    path: "/contact",
+                    element: (
+                        <SuspenseContainer>
+                            <Contact />
+                        </SuspenseContainer>
+                    ),
+                },
+                {
+                    path: "/about",
+                    element: (
+                        <SuspenseContainer>
+                            <About />
+                        </SuspenseContainer>
+                    ),
+                },
+                {
+                    path: "/cart",
+                    element: (
+                        <SuspenseContainer>
+                            <Cart />
+                        </SuspenseContainer>
+                    ),
+                },
+            ])}
+        </>
+    );
 };
 
 export default Routers;
