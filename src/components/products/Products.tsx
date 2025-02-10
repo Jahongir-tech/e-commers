@@ -1,9 +1,20 @@
+import { Loading } from "../../config";
+import { useGetProductsQuery } from "../../redux/api/products";
 import { IProduct } from "../../types";
 import Stars from "../stars/Stars";
 import LikeBtn from "./LikeBtn";
 import SeeBtn from "./SeeBtn";
 
 const Products = ({ data, title }: { data: any; title: any }) => {
+    const { isLoading } = useGetProductsQuery("");
+
+    if (isLoading) {
+        return (
+            <div className="w-20 h-20 flex items-center justify-center mx-auto">
+                <Loading />
+            </div>
+        );
+    }
     const productItems = data?.products
         ?.slice(0, 8)
         .map((product: IProduct) => (

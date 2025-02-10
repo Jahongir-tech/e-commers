@@ -32,11 +32,11 @@ const Heart = ({ product }: { product: any }) => {
     return (
         <button
             onClick={handleLike}
-            className={`w-[40px] h-[40px] max-sm:h-[35px] max-sm:w-[35px] max-sm:text-lg rounded-full bg-white dark:bg-zinc-700 shadow-md flex items-center justify-center text-[22px] 
-      transition-all duration-300 hover:bg-gray-200 dark:hover:bg-zinc-600`}
+            className={`w-[40px] h-[40px] max-sm:h-[35px] max-sm:w-[35px] max-sm:text-lg rounded-full bg-white shadow-md flex items-center justify-center text-[22px] 
+      transition-all duration-300 hover:bg-gray-200`}
         >
             {wishlist?.some((item: any) => item.id === product.id) ? (
-                <IoMdHeart className="text-black" />
+                <IoMdHeart className="text-red-500" />
             ) : (
                 <IoMdHeartEmpty />
             )}
